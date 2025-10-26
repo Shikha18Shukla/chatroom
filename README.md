@@ -1,55 +1,40 @@
-# 🔐 Secured Chatroom
+# React Chatroom Upgrade with Auto-Detect Theming
 
-This project is a **real-time secure chatroom** built to understand and enhance communication security. It demonstrates how encrypted messaging, authentication, and socket-based communication can be implemented efficiently in a chat application.
+This project is a full chatroom app with Material 3 and Apple-like theming, auto-detected based on device.
 
----
+## Features
 
-## 🚀 Features
+- Responsive design (mobile, tablet, desktop)
+- Random room creation/join
+- Text chat
+- Image sharing (max 5MB placeholder)
+- Voice calling via WebRTC (basic signaling)
+- Admin console with real-time monitoring
+- Auto-detect theme: Apple theme for iOS/macOS, Material 3 otherwise
 
-- **Real-Time Messaging:** Instant chat using WebSockets or Socket.IO  
-- **User Authentication:** Secure login and registration system  
-- **Message Encryption:** End-to-end encryption for private conversations  
-- **Efficient Data Flow:** Optimized message handling and minimal latency  
-- **User Status Tracking:** Online/offline indicators  
-- **Error Handling:** Safe disconnections and message recovery support  
+## Installation
 
----
+### Backend
+```
+cd chatroom-app-upgrade
+npm install
+node server.js
+```
 
-## 🔒 Security Highlights
+### Frontend
+```
+cd client
+npm install
+npm start
+```
 
-- **End-to-End Encryption (E2EE):** Messages are encrypted on the sender’s side and decrypted only by the receiver.  
-- **Secure Socket Layer:** All connections are established over HTTPS/WSS.  
-- **Hashed Passwords:** Uses bcrypt or SHA-256 for user credential storage.  
-- **Token-Based Authentication:** JWT or session-based user verification.  
-- **Input Sanitization:** Prevents XSS and injection attacks.  
+## File Structure
 
----
-
-## 🧠 Learning Goals
-
-This repository is cloned and studied to:
-- Understand **how real-time chat systems work**
-- Explore **end-to-end encryption** techniques
-- Analyze **server-side security flaws**
-- Improve **scalability and message efficiency**
-- Learn **best practices for secure communication apps**
-
----
-
-## 🏗️ Tech Stack
-
-| Component | Technology |
-|------------|-------------|
-| Frontend | HTML, CSS, JavaScript (or React) |
-| Backend | Node.js / Python Flask / Django |
-| Communication | WebSocket / Socket.IO |
-| Database | MongoDB / MySQL / Firebase |
-| Security | HTTPS, JWT, bcrypt, E2EE |
-
-
-## ⚙️ Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/secured-chatroom.git
-   cd secured-chatroom
+- `server.js`: backend server with Socket.io
+- `client/src`: React frontend components
+  - `App.jsx`: main app with theme detection and admin toggle
+  - `Chatroom.jsx`: user chatroom component
+  - `Admin.jsx`: admin console component
+  - `signaling.js`: socket.io client instance
+- `client/public/index.html`: HTML template
+- `README.md`: this file
